@@ -1,0 +1,11 @@
+syws
+====
+
+syws is a Sinatra app that uses Yahoo! Web Service for Search. 
+
+The response from the Yahoo! Web Service is in XML format. By including the REXML library one is able to handle the XML Response in a more readable way.
+
+Ruby code used is from the blog post -
+http://rubylearning.com/blog/2008/04/25/yahoo-web-services-in-ruby/
+
+Have fun!
