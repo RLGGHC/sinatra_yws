@@ -9,6 +9,10 @@ YAHOO_WEB_SERVICE_SEARCH_URL = 'http://search.yahooapis.com/WebSearchService/V1/
 
 #---
 def yahoo_search(query, results_limit)
+  if results_limit.to_i > 10
+    results_limit = '10'
+  end
+  
   url = "#{YAHOO_WEB_SERVICE_SEARCH_URL}?appid=#{APPLICATION_ID}&query=#{URI.encode(query)}&results=#{results_limit}"
   begin
     xml_result_set = Net::HTTP.get_response(URI.parse(url))
@@ -41,7 +45,7 @@ error do
   erb :'500'
 end
 
-# http://vivid-flower-63.heroku.com/
+# http://blooming-window-92.heroku.com/
 get '/' do
   erb :accept
 end

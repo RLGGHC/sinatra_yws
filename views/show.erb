@@ -12,10 +12,13 @@
 <h1>Using Yahoo! Web Service for Search</h1>
 
 <p><% yahoo_search(params['post']['iname'], params['post']['iresult']) %>
-
-<% @titles.each_with_index do | title, index | %>
-  <b>Title:</b> <%= "#{title}" %> - URL: <%= "#{@links[index]}" %><br />
-  <b>Summary:</b> <%= "#{@summaries[index]}" %><br /><br />
+<% if @titles.length != 0 %>
+  <% @titles.each_with_index do | title, index | %>
+    <b>Title:</b> <%= "#{title}" %> - URL: <%= "#{@links[index]}" %><br />
+    <b>Summary:</b> <%= "#{@summaries[index]}" %><br /><br />
+  <% end %>
+<% else %>
+  Sorry, no search results.
 <% end %>
 </p>
 
