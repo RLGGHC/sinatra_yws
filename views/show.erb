@@ -14,7 +14,7 @@
 <p><% yahoo_search(params['post']['iname'], params['post']['iresult']) %>
 <% if @titles.length != 0 %>
   <% @titles.each_with_index do | title, index | %>
-    <b>Title:</b> <%= "#{title}" %> - URL: <a href='<%= "#{@links[index]}" %>'><%= "#{@links[index]}" %></a><br />
+    <b>Title:</b> <%= "#{title}" %> - URL: <a href='<%= "#{@links[index]}" %>'  target="_blank"><%= "#{@links[index]}" %></a><br />
     <b>Summary:</b> <%= "#{@summaries[index]}" %><br /><br />
   <% end %>
 <% else %>
